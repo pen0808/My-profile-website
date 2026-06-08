@@ -160,16 +160,22 @@ section {
 }
 
 .animated-text h3:nth-child(1) {
-    animation: text-move 6s infinite ease-out;
+    animation: text-move 12s infinite ease-in-out;
 }
 
 @keyframes text-move {
-    0%, 10%   { margin-top: 0; }
-    16%, 26%  { margin-top: -70px; }
-    32%, 42%  { margin-top: -140px; }
-    48%, 58%  { margin-top: -210px; }
-    64%, 74%  { margin-top: -280px; }
-    80%, 100% { margin-top: 0; }
+    0%        { margin-top: 0; }
+    12%       { margin-top: 0; }
+    16%       { margin-top: -70px; }
+    28%       { margin-top: -70px; }
+    32%       { margin-top: -140px; }
+    44%       { margin-top: -140px; }
+    48%       { margin-top: -210px; }
+    60%       { margin-top: -210px; }
+    64%       { margin-top: -280px; }
+    76%       { margin-top: -280px; }
+    80%       { margin-top: -350px; }
+    100%      { margin-top: -350px; }
 }
 
 /* Buttons */
@@ -445,6 +451,11 @@ section {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+
+.work .content > a {
+    display: block;
+    text-decoration: none;
 }
 
 .work .content .card {
@@ -909,12 +920,18 @@ section {
     }
 
     @keyframes text-move {
-        0%, 10%   { margin-top: 0; }
-        16%, 26%  { margin-top: -50px; }
-        32%, 42%  { margin-top: -100px; }
-        48%, 58%  { margin-top: -150px; }
-        64%, 74%  { margin-top: -200px; }
-        80%, 100% { margin-top: 0; }
+        0%        { margin-top: 0; }
+        12%       { margin-top: 0; }
+        16%       { margin-top: -50px; }
+        28%       { margin-top: -50px; }
+        32%       { margin-top: -100px; }
+        44%       { margin-top: -100px; }
+        48%       { margin-top: -150px; }
+        60%       { margin-top: -150px; }
+        64%       { margin-top: -200px; }
+        76%       { margin-top: -200px; }
+        80%       { margin-top: -250px; }
+        100%      { margin-top: -250px; }
     }
 
     .section-title {
@@ -952,6 +969,7 @@ section {
         height: 96px;
     }
 
+    .work .content > a,
     .work .content .card {
         width: 100%;
         max-width: 400px;
