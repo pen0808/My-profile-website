@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="word-puzzle.css">    
+       
+    <title>Word Puzzle Game</title>
+</head>
+<body>
+        <header>
+            <a href="index.html" class="brand reveal zoom-in" data-delay="1000">Paul</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <a href="index.html" class="reveal fade-up" data-delay="100">Home</a>
+                <a href="#about" class="reveal fade-up" data-delay="200">About</a>
+                <a href="#skills" class="reveal fade-up" data-delay="300">Skills</a>
+                <a href="#services" class="reveal fade-up" data-delay="400">Services</a>
+                <a href="#work" class="reveal fade-up" data-delay="500">Work</a>
+                <a href="#contact" class="reveal fade-up" data-delay="600">Contact</a>
+            </div>
+        </header>
+
+        <section class="main">
+            <div class="content project-content">
+                <h1 class="project-title load-anim">Word Puzzle Game</h1>
+                <h3 class="project-subtitle load-anim" style="animation-delay: 0.2s">Project Description</h3>
+                <p class="reveal fade-up" data-delay="100">Word Puzzle is an interactive web application designed
+                    for word game enthusiasts, students, and anyone who enjoys challenging their vocabulary skills.
+                    The platform offers engaging word puzzles that test spelling, critical thinking, and problem-solving
+                    abilities in a fun and interactive way.
+                    Whether for learning, entertainment, or mental exercise, Word Puzzle helps users improve their
+                    vocabulary, enhance cognitive skills, and stay mentally active while enjoying an engaging gaming
+                    experience.
+
+                </p>
+                <a href="https://word-puzzle-phi.vercel.app/" target="_blank" class="project-btn reveal fade-up" data-delay="300">View Live Project</a>
+            </div>
+        </section>
+
+    <script>
+        // Scroll Reveal Animation (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (el.dataset.delay) {
+                el.style.transitionDelay = el.dataset.delay + 'ms';
+            }
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+        const navigationItems = document.querySelectorAll(".navigation a");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        // Close menu on link click
+        navigationItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                menuBtn.classList.remove("active");
+                navigation.classList.remove("active");
+            });
+        });
+
+        // Sticky header
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
